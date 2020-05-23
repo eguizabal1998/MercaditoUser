@@ -1,0 +1,41 @@
+<resources>
+    <string name="app_name">Transporte1</string>
+    <string name="login_email_hint">Correo</string>
+    <string name="login_password_hint">Contraseña</string>
+    <string name="loginCuenta">Aun no \nTienes una \nCuenta?</string>
+    <string name="descripcionlogo">logo1</string>
+    <string name="contraseña_olvidada">Olvidaste tu contraseña?</string>
+    <string name="nuevo_usuario_registrate_ahora">Nuevo Usuario? Registrate Ahora</string>
+    <string name="otro_metodos">Usa Otros Metodos</string>
+    <string name="todo">TODO</string>
+    <string name="login">Login</string>
+    <string name="tu_primer_paso">Aqui está\ntu primer\npaso con \nnosotros!</string>
+    <string name="nombre">Nombre</string>
+    <string name="numero_mobil">Numero Movil</string>
+    <string name="contrase_a">Contraseña</string>
+    <string name="registrarse">Registrarse</string>
+    <string name="recuperar">Recuperar</string>
+    <string name="olvidaste_tu_ncontrase_a">Olvidaste tu\nContraseña?</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <string-array name="Departamentos">
+        <item>Seleccione un Departamento</item>
+        <item>Ahuachapán</item>
+        <item>Cabañas</item>
+        <item>Chalatenango</item>
+        <item>Cuscatlán</item>
+        <item>La Libertad</item>
+        <item>La Paz</item>
+        <item>La Unión</item>
+        <item>Morazán</item>
+        <item>San Miguel</item>
+        <item>San Salvador</item>
+        <item>San Vicente</item>
+        <item>Santa Ana</item>
+        <item>Sonsonate</item>
+        <item>Usulután</item>
+    </string-array>
+
+</resources>

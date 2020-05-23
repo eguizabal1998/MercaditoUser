@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation2"
+    app:startDestination="@id/listadoFragment">
+
+    <fragment
+        android:id="@+id/listadoFragment"
+        android:name="com.basicdeb.mercaditouser.ui.listado.ListadoFragment"
+        android:label="Negocios Disponibles"
+        tools:layout="@layout/listado_fragment">
+        <action
+            android:id="@+id/action_listadoFragment_to_vistaProductosFragment"
+            app:destination="@id/vistaProductosFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/vistaProductosFragment"
+        android:name="com.basicdeb.mercaditouser.ui.vistaproductos.VistaProductosFragment"
+        tools:layout="@layout/vista_productos_fragment">
+        <action
+            android:id="@+id/action_vistaProductosFragment_to_chatFragment"
+            app:destination="@id/chatFragment" />
+        <argument
+            android:name="Uid"
+            app:argType="string" />
+        <argument
+            android:name="nombre"
+            app:argType="string" />
+        <argument
+            android:name="descripcion"
+            app:argType="string" />
+        <argument
+            android:name="numero"
+            app:argType="integer" />
+        <argument
+            android:name="facebook"
+            app:argType="string" />
+        <argument
+            android:name="uriPortada"
+            app:argType="string" />
+        <argument
+            android:name="departamento"
+            app:argType="string" />
+        <action
+            android:id="@+id/action_vistaProductosFragment_to_listadoFragment"
+            app:destination="@id/listadoFragment"
+            app:popUpTo="@id/navigation2"
+            app:popUpToInclusive="true" />
+        <action
+            android:id="@+id/action_vistaProductosFragment_to_seleccionFragment"
+            app:destination="@id/seleccionFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/chatFragment"
+        android:name="com.basicdeb.mercaditouser.ui.chat.ChatFragment"
+        android:label="chat_fragment"
+        tools:layout="@layout/chat_fragment" />
+    <fragment
+        android:id="@+id/cerrarFragment"
+        android:name="com.basicdeb.mercaditouser.ui.cerrar.CerrarFragment"
+        android:label="Cerrar Sesion"
+        tools:layout="@layout/cerrar_fragment" />
+    <fragment
+        android:id="@+id/seleccionFragment"
+        android:name="com.basicdeb.mercaditouser.ui.vistaproductos.SeleccionFragment"
+        android:label="SeleccionFragment"
+        tools:layout="@layout/seleccion_fragment"/>
+</navigation>

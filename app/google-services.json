@@ -1,0 +1,70 @@
+{
+  "project_info": {
+    "project_number": "851754355709",
+    "firebase_url": "https://mercadito-51eb6.firebaseio.com",
+    "project_id": "mercadito-51eb6",
+    "storage_bucket": "mercadito-51eb6.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:851754355709:android:8cb3c887a9227ea2cea794",
+        "android_client_info": {
+          "package_name": "com.basicdeb.mercadito"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "851754355709-9mhg2ud9fqi2r9uolebo514s2396h5l8.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAIvl5ldYpK1PFDw2AXsEGOfCdNi31CC0A"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "851754355709-9mhg2ud9fqi2r9uolebo514s2396h5l8.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      },
+      "admob_app_id": "ca-app-pub-7939671701124128~4654516290"
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:851754355709:android:8caa4900c82393bdcea794",
+        "android_client_info": {
+          "package_name": "com.basicdeb.mercaditouser"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "851754355709-9mhg2ud9fqi2r9uolebo514s2396h5l8.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAIvl5ldYpK1PFDw2AXsEGOfCdNi31CC0A"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "851754355709-9mhg2ud9fqi2r9uolebo514s2396h5l8.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

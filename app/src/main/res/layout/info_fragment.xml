@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+        <variable
+            name="viewModel"
+            type="com.basicdeb.mercaditouser.viewmodel.infoinicial.InfoViewModel" />
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:padding="10dp">
+
+        <LinearLayout
+            android:id="@+id/ll_info_perfil"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Completa tu perfil"
+                android:textSize="18sp"
+                android:textColor="@color/darkTextColor" />
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/et_info_nombre"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Nombre"
+                    android:text="@={viewModel.nombre}"/>
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/et_info_telefono"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Telefono Mobil"
+                    android:inputType="phone"
+                    android:text="@={viewModel.telefono}"/>
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:text="Direccion de entrega"
+                android:textSize="18sp"
+                android:textColor="@color/darkTextColor" />
+
+            <com.google.android.gms.maps.MapView
+                android:id="@+id/map_info"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"/>
+
+            <Button
+                android:id="@+id/btn_info_generar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Generar Direccion"/>
+
+            <TextView
+                android:id="@+id/tv_info_direccion1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@={viewModel.direccion1}"/>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/et_info_direccion2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Numero de casa y calle"
+                    android:inputType="text"
+                    android:text="@={viewModel.direccion2}"/>
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <Button
+                android:id="@+id/btn_info_guardar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                style="@style/loginButton"
+                android:text="Guardar Perfil"
+                android:onClick="@{()-> viewModel.checkCampos()}"/>
+
+        </LinearLayout>
+
+
+    </RelativeLayout>
+
+</layout>

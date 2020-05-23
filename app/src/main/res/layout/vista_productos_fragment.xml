@@ -1,0 +1,480 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="com.basicdeb.mercaditouser.viewmodel.vistaproductos.VistaProductosViewModel" />
+    </data>
+
+    <RelativeLayout
+        android:id="@+id/relative_vistaProd"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.core.widget.NestedScrollView
+            tools:visibility="gone"
+            android:id="@+id/scroll_vistaproductos"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:elevation="10dp"
+            android:background="@drawable/redondeado1">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <ImageView
+                    android:id="@+id/imagePortada_vistaProd"
+                    android:layout_width="match_parent"
+                    android:layout_height="250dp"
+                    android:src="@drawable/logo"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    android:elevation="1dp" />
+
+                <TextView
+                    android:id="@+id/tv_vistaProd_nombre"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="15dp"
+                    android:layout_marginTop="15dp"
+                    android:text="@={viewModel.nombre}"
+                    android:textSize="30sp"
+                    android:textColor="@color/darkTextColor"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/imagePortada_vistaProd"
+                    tools:text="Nombre del negocio" />
+
+                <ImageView
+                    android:id="@+id/separador1"
+                    android:layout_width="match_parent"
+                    android:layout_height="2dp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tv_vistaProd_nombre"
+                    android:background="@drawable/linea2"
+                    android:layout_marginTop="10dp"/>
+
+                <TextView
+                    android:id="@+id/tv_vistaProd_text1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="15dp"
+                    android:layout_marginTop="15dp"
+                    android:text="Informacion del negocio"
+                    android:textSize="16sp"
+                    android:textColor="@color/darkTextColor"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/separador1"
+                    />
+
+                <TextView
+                    android:id="@+id/tv_vistaProd_descripcion"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="15dp"
+                    android:layout_marginTop="5dp"
+                    android:text="@={viewModel.descripcion}"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tv_vistaProd_text1"
+                    tools:text="Descripcion" />
+
+                <ImageView
+                    android:id="@+id/separador2"
+                    android:layout_width="match_parent"
+                    android:layout_height="2dp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tv_vistaProd_descripcion"
+                    android:background="@drawable/linea2"
+                    android:layout_marginTop="15dp"/>
+
+                <LinearLayout
+                    android:id="@+id/btn_vistaProd_completarOrden"
+                    tools:visibility="visible"
+                    android:visibility="gone"
+                    android:layout_marginTop="30dp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tv_vistaProd_numero"
+                    android:layout_width="match_parent"
+                    android:layout_height="56dp"
+
+                    android:background="@color/colorPrimary2"
+                    android:elevation="10dp"
+                    android:gravity="center_vertical"
+                    android:padding="10dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Completar Orden"
+                        android:textSize="18sp"
+                        android:textColor="@color/whiteTextColor"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="18sp"
+                        android:textColor="@color/whiteTextColor"
+                        android:layout_marginStart="25dp"
+                        android:text="$ "/>
+
+                    <TextView
+                        android:id="@+id/tv_vistaProd_precioactual"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="20sp"
+                        android:textColor="@color/whiteTextColor"
+                        android:layout_marginStart="10dp"
+                        tools:text="0.00"
+                        android:text="@={viewModel.subTotal}"/>
+
+                </LinearLayout>
+
+                <com.facebook.shimmer.ShimmerFrameLayout
+                    android:id="@+id/shimerProd"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="15dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/btn_vistaProd_completarOrden">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <include layout="@layout/producto_row_shimer"/>
+
+                        <include layout="@layout/producto_row_shimer" />
+
+                        <include layout="@layout/producto_row_shimer"/>
+
+                    </LinearLayout>
+
+                </com.facebook.shimmer.ShimmerFrameLayout>
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rv_vistaProd"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="15dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/btn_vistaProd_completarOrden" />
+
+                <TextView
+                    android:id="@+id/textView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="15dp"
+                    android:layout_marginTop="5dp"
+                    android:text="Contactar"
+                    android:textColor="@color/colorAccent"
+                    android:textSize="18sp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/separador2" />
+
+                <TextView
+                    android:id="@+id/tv_vistaProd_numero"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="15dp"
+                    android:layout_marginTop="5dp"
+                    android:text="@={viewModel.numero}"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/textView"
+                    tools:text="7318-7298" />
+
+                <ImageView
+                    android:id="@+id/img_vistaProd_facebook"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="84dp"
+                    android:src="@drawable/ic_facebook"
+                    app:layout_constraintBottom_toBottomOf="@+id/tv_vistaProd_numero"
+                    app:layout_constraintStart_toEndOf="@+id/tv_vistaProd_numero"
+                    app:layout_constraintTop_toTopOf="@+id/tv_vistaProd_numero" />
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </androidx.core.widget.NestedScrollView>
+
+        <androidx.core.widget.NestedScrollView
+            android:id="@+id/vistaProd_agregar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+            tools:visibility="visible">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:elevation="4dp">
+
+                <ImageView
+                    android:id="@+id/img_vistaProd_producto"
+                    android:layout_width="match_parent"
+                    android:layout_height="250dp"
+                    android:src="@drawable/logo" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="18sp"
+                    android:textColor="@color/darkTextColor"
+                    android:layout_margin="15dp"
+                    android:text="@={viewModel.nombreProd}"/>
+
+                <TextView
+                    android:id="@+id/tv_vistaProd_descripcionProd"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/darkTextColor"
+                    android:text="Nombre"
+                    android:layout_margin="15dp"
+                    tools:text="Descripcion del producto" />
+
+                <TextView
+                    android:id="@+id/tv_vistaProd_cantidad"
+                    android:layout_width="50dp"
+                    android:layout_height="75dp"
+                    android:textSize="50sp"
+                    android:layout_gravity="center_horizontal"
+                    android:gravity="center"
+                    android:textColor="@color/darkTextColor"
+                    android:layout_marginTop="40dp"
+                    android:text="@={viewModel.cantidad}"
+                    />
+
+                <LinearLayout
+                    android:id="@+id/ll_botones"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center">
+
+                    <Button
+                        android:id="@+id/btn_vistaProd_mas"
+                        android:layout_width="50dp"
+                        android:layout_height="wrap_content"
+                        android:textSize="30sp"
+                        android:text="+"
+                        android:backgroundTint="@color/colorPrimary2"
+                        android:onClick="@{()-> viewModel.suma()}"/>
+
+                    <Button
+                        android:id="@+id/btn_vistaProd_menos"
+                        android:layout_width="50dp"
+                        android:layout_height="wrap_content"
+                        android:textSize="30sp"
+                        android:backgroundTint="@color/colorPrimary2"
+                        android:text="-"
+                        android:onClick="@{()-> viewModel.restar()}"/>
+
+                </LinearLayout>
+
+                <Button
+                    android:id="@+id/btn_vistaProd_agregar"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    style="@style/loginButton"
+                    android:textSize="16sp"
+                    android:layout_marginTop="45dp"
+                    android:text="Funcion aun no disponible"
+                    />
+<!--                android:text="@={viewModel.textoBoton}"-->
+            </LinearLayout>
+
+        </androidx.core.widget.NestedScrollView>
+
+        <androidx.core.widget.NestedScrollView
+            android:id="@+id/scroll_orden"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            tools:visibility="gone"
+            android:visibility="gone">
+
+            <LinearLayout android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="15dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="20sp"
+                    android:layout_marginTop="35dp"
+                    android:text="Tu orden actual"/>
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rv_ordenes"
+                    android:layout_marginTop="25dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"/>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginTop="15dp">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="20sp"
+                        android:text="Total:  $"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="20sp"
+                        android:textColor="@color/darkTextColor"
+                        android:layout_marginStart="10dp"
+                        tools:text="0.00"
+                        android:text="@={viewModel.subTotal}"/>
+
+                </LinearLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/et_orden_telefono"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="Telefono de Contacto(Opcional)"
+                        android:textSize="14sp"
+                        android:text="@={viewModel.telefono}"/>
+                </com.google.android.material.textfield.TextInputLayout>
+
+
+                <com.google.android.gms.maps.MapView
+                    android:id="@+id/mapView"
+                    android:layout_width="match_parent"
+                    android:layout_height="200dp"
+                    android:layout_marginTop="30dp"
+                    android:layout_weight="1" />
+
+                <TextView
+                    android:id="@+id/textLayout_orden_direccion1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="16sp"
+                    android:text="@={viewModel.direccion1}"/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="14sp"
+                    android:text="Click Aqui para cambiar ubicacion"/>
+
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/et_orden_direccion2"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textSize="14sp"
+                        android:text="@={viewModel.direccion2}"
+                        android:hint="Calle y numero de casa"/>
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/et_orden_direccion3"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@={viewModel.direccion3}"
+                        android:textSize="14sp"
+                        android:hint="Informacion adicional"/>
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <Button
+                    android:id="@+id/btn_orden_completar"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="30dp"
+                    style="@style/loginButton"
+                    android:text="Completar Orden "
+                    android:onClick="@{()->viewModel.checkCampos()}"/>
+
+            </LinearLayout>
+        </androidx.core.widget.NestedScrollView>
+
+        <LinearLayout
+            android:id="@+id/ll_orden_modMapa"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="15dp"
+            android:visibility="gone"
+            tools:visibility="gone">
+
+            <com.google.android.gms.maps.MapView
+                android:id="@+id/mapViewMod"
+                android:layout_width="match_parent"
+                android:layout_height="250dp"
+                android:layout_marginTop="25dp"/>
+
+            <Button
+                android:id="@+id/btn_orden_buscarDireccion"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Buscar Direccion"
+                android:layout_marginTop="10dp"
+                />
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Direccion Generada"
+                    android:text="@={viewModel.direccionTemporal}"
+                    android:enabled="false"/>
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Puede que no coincida con su direccion real, solamente es para establer un punto de localizacion en el mapa."/>
+
+            <Button
+                android:id="@+id/btn_orden_guardarDireccion"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Guardar"
+                android:layout_marginTop="20dp"
+                style="@style/loginButton"/>
+
+        </LinearLayout>
+
+
+    </RelativeLayout>
+
+</layout>

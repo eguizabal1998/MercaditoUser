@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+
+    <data>
+        <variable
+            name="viewModel"
+            type="com.basicdeb.mercaditouser.viewmodel.login.RecoveryViewModel" />
+    </data>
+
+    <RelativeLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/register_bk_color"
+        android:focusableInTouchMode="true"
+        android:gravity="center"
+        android:layout_gravity="center">
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_alignParentTop="true">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="20dp">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical">
+                    <TextView
+                        style="@style/viewParent.headerText.NoMode"
+                        android:textColor="@color/whiteTextColor"
+                        android:text="@string/olvidaste_tu_ncontrase_a"/>
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="5dp"
+                        android:src="@drawable/ic_login_hero"
+                        android:contentDescription="@string/todo" />
+                </LinearLayout>
+                <androidx.cardview.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    app:cardBackgroundColor="@color/whiteTextColor"
+                    app:cardCornerRadius="10dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="10dp"
+                        android:orientation="vertical">
+
+
+                        <com.google.android.material.textfield.TextInputLayout
+                            android:id="@+id/textInputEmail_recovery"
+                            style="@style/parent"
+                            android:layout_marginTop="@dimen/loginViewsMargin">
+                            <com.google.android.material.textfield.TextInputEditText
+                                android:id="@+id/editTextEmail_recovery"
+                                style="@style/modifiedEditText"
+                                android:inputType="textEmailAddress"
+                                android:maxLines="1"
+                                android:hint="@string/login_email_hint"
+                                android:text="@={viewModel.correo}"
+                                />
+                        </com.google.android.material.textfield.TextInputLayout>
+
+
+                        <Button
+                            android:id="@+id/btn_recovery_recuperar"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            style="@style/loginButton"
+                            android:layout_marginTop="10dp"
+                            android:text="@string/recuperar"
+                            android:onClick="@{()->viewModel.checkField()}"/>
+
+                        <ProgressBar
+                            android:id="@+id/cirRegisterButton_recovery"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_horizontal"
+                            android:layout_marginTop="@dimen/loginViewsMargin"
+                            android:visibility="gone"/>
+
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+
+
+            </LinearLayout>
+        </ScrollView>
+        <View
+            android:layout_marginTop="20dp"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:layout_width="11dp"
+            android:layout_height="match_parent"
+            android:background="@drawable/ic_side_bg"/>
+        <ImageView
+            android:id="@+id/btn_recovery_back"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentStart="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_back_img"
+            android:layout_marginEnd="11dp"
+            android:layout_marginBottom="30dp"
+            android:adjustViewBounds="false"/>
+    </RelativeLayout>
+</layout>

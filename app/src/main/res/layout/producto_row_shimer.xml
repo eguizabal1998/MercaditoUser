@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_marginBottom="10dp"
+    android:elevation="4dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/constrain_shimerprod_info"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="15dp">
+
+            <ImageView
+                android:id="@+id/imageView_producto"
+                android:layout_width="110dp"
+                android:layout_height="110dp"
+                android:background="@color/placeholder_bg"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/textView_shimerprod_nombre"
+                android:layout_width="200dp"
+                android:layout_height="25dp"
+                android:textColor="@color/colorPrimaryDark"
+                android:textSize="18sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:text="Nombre del producto"
+                android:background="@color/placeholder_bg"/>
+
+            <TextView
+                android:id="@+id/textView_shimerprod_signo"
+                android:layout_width="10dp"
+                android:layout_height="20dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginBottom="5dp"
+                tools:text="$"
+                android:background="@color/placeholder_bg"
+                android:textColor="@color/darkTextColor"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView_shimerprod_descripcion" />
+
+            <TextView
+                android:id="@+id/textView_shimerprod_precio"
+                android:layout_width="35dp"
+                android:layout_height="20dp"
+                android:layout_marginStart="5dp"
+                android:layout_marginBottom="5dp"
+                android:layout_marginTop="5dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/textView_shimerprod_signo"
+                app:layout_constraintTop_toBottomOf="@+id/textView_shimerprod_descripcion"
+                tools:text="3.75"
+                android:background="@color/placeholder_bg"
+                android:textColor="@color/darkTextColor"/>
+
+            <TextView
+                android:id="@+id/textView_shimerprod_unidad"
+                android:layout_width="85dp"
+                android:layout_height="20dp"
+                android:layout_marginStart="5dp"
+                android:layout_marginBottom="5dp"
+                android:layout_marginTop="5dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/textView_shimerprod_precio"
+                app:layout_constraintTop_toBottomOf="@+id/textView_shimerprod_descripcion"
+                tools:text="Unidad/libra"
+                android:background="@color/placeholder_bg"
+                android:textColor="@color/darkTextColor"/>
+
+            <TextView
+                android:id="@+id/textView_shimerprod_descripcion"
+                android:layout_width="250dp"
+                android:layout_height="35dp"
+                android:layout_marginTop="15dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView_shimerprod_nombre"
+                tools:text="Descripcion del producto"
+                android:background="@color/placeholder_bg"/>
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:src="@drawable/linea"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:layout_margin="5dp"/>
+
+
+    </LinearLayout>
+
+
+</RelativeLayout>
